@@ -15,21 +15,20 @@ You will:
 ## Project Structure
 
 ```
-mern-testing/
+week-6-test-debug-assignment-Elyson25/
 ├── client/                 # React front-end
 │   ├── src/                # React source code
-│   │   ├── components/     # React components
+│   │   ├── components/     # React components (Button, Form)
+│   │   ├── hooks/          # Custom hooks (useApi)
 │   │   ├── tests/          # Client-side tests
 │   │   │   ├── unit/       # Unit tests
-│   │   │   └── integration/ # Integration tests
+│   │   │   └── setup.js    # Test setup
 │   │   └── App.jsx         # Main application component
 │   └── cypress/            # End-to-end tests
 ├── server/                 # Express.js back-end
 │   ├── src/                # Server source code
-│   │   ├── controllers/    # Route controllers
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   └── middleware/     # Custom middleware
+│   │   ├── routes/         # API routes (auth, posts)
+│   │   └── app.js          # Main server file
 │   └── tests/              # Server-side tests
 │       ├── unit/           # Unit tests
 │       └── integration/    # Integration tests
@@ -39,6 +38,8 @@ mern-testing/
 
 ## Getting Started
 
+### Development Setup
+
 1. Accept the GitHub Classroom assignment invitation
 2. Clone your personal repository that was created by GitHub Classroom
 3. Install dependencies for both client and server:
@@ -47,6 +48,7 @@ mern-testing/
    ```
 4. Set up the test database:
    ```bash
+   cd server
    npm run setup-test-db
    ```
 5. Run the tests:
@@ -63,8 +65,14 @@ mern-testing/
    # Run only end-to-end tests
    npm run test:e2e
    ```
-6. Explore the starter code and existing tests
-7. Complete the tasks outlined in the assignment
+6. Start development environment:
+   ```bash
+   npm run dev
+   ```
+7. Explore the starter code and existing tests
+8. Complete the tasks outlined in the assignment
+
+
 
 ## Files Included
 
