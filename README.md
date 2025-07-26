@@ -41,9 +41,30 @@ mern-testing/
 
 1. Accept the GitHub Classroom assignment invitation
 2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week6-Assignment.md` file
-4. Explore the starter code and existing tests
-5. Complete the tasks outlined in the assignment
+3. Install dependencies for both client and server:
+   ```bash
+   npm run install-all
+   ```
+4. Set up the test database:
+   ```bash
+   npm run setup-test-db
+   ```
+5. Run the tests:
+   ```bash
+   # Run all tests
+   npm test
+   
+   # Run only unit tests
+   npm run test:unit
+   
+   # Run only integration tests
+   npm run test:integration
+   
+   # Run only end-to-end tests
+   npm run test:e2e
+   ```
+6. Explore the starter code and existing tests
+7. Complete the tasks outlined in the assignment
 
 ## Files Included
 
@@ -66,8 +87,38 @@ mern-testing/
 - Jest: JavaScript testing framework
 - React Testing Library: Testing utilities for React
 - Supertest: HTTP assertions for API testing
-- Cypress/Playwright: End-to-end testing framework
+- Cypress: End-to-end testing framework
 - MongoDB Memory Server: In-memory MongoDB for testing
+
+## Testing Strategy
+
+This project implements a comprehensive testing strategy following the testing pyramid:
+
+### Unit Tests
+- **Server**: Utility functions, middleware, and business logic
+- **Client**: React components, custom hooks, and utility functions
+- **Coverage**: >70% code coverage target
+
+### Integration Tests
+- **Server**: API endpoints, database operations, authentication flows
+- **Client**: Component interactions with APIs, form submissions
+- **Tools**: Supertest, MongoDB Memory Server
+
+### End-to-End Tests
+- **Coverage**: Complete user workflows and critical paths
+- **Tools**: Cypress with custom commands
+- **Features**: Real browser testing, accessibility testing
+
+### Test Scripts
+```bash
+npm test              # Run all tests
+npm run test:unit     # Run unit tests only
+npm run test:integration  # Run integration tests only
+npm run test:e2e      # Run end-to-end tests only
+npm run test:coverage # Run tests with coverage report
+```
+
+For detailed testing documentation, see [TESTING_STRATEGY.md](TESTING_STRATEGY.md).
 
 ## Submission
 
